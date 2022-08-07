@@ -1,0 +1,27 @@
+.dividers-wrapper {
+  position: absolute;
+  top: 508px;
+  left: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.dividers-wrapper .divider1 {
+  height: 70px;
+  width: 2px;
+  background: #fff !important;
+  margin: 0;
+}
+.dividers-wrapper .divider2 {
+  height: 70px;
+  width: 2px;
+  background: #000;
+  margin: 0;
+}

@@ -1,0 +1,354 @@
+$gradient-border: rgba(196, 140, 111, .7);
+$gradient-frame-parts: #9E5B39;
+$main-dark: #050712;
+
+//-------------------------ABOUT US - PAGE-------------------------
+.about-block {
+  height: 578px;
+  background-image: url('../images/about-us-page-pics/about-us-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__info {
+    height: 578px;
+  }
+}
+//-------------------------ABOUT PROOFS-------------------------
+.proofs-block {
+  background: #fff;
+
+  &__heading {
+    margin-top: 200px;
+    padding: 0 220px;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 36px;
+    text-align: center;
+    position: relative; 
+
+    div {
+      margin-bottom: 12px;
+    }
+  }
+
+  &__explain {
+    margin-top: 100px;
+    margin-bottom: 142px;
+    display: flex;
+    justify-content: center;
+  
+    &-item {
+      width: 260px;
+  
+      h2 {
+        @include second-heading;
+        text-align: center;
+        @include gradient-text;
+      }
+  
+      h3 {
+        margin-top: 24px;
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 36px;
+        text-align: center;
+        color: $main-dark;
+      }
+    }
+  }
+}
+//-------------------------REVITALIZE-------------------------
+.revitalize-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0px 15px;
+}
+
+.revitalize-block {
+  background: $main-dark;
+}
+
+.revitalize-info {
+  padding-top: 60px;
+
+  &__top {
+    height: 610px;
+    width: 100%;
+    border: 1px solid $gradient-border; 
+    position: relative;
+
+    .revitalize-img {
+     margin: 25px 27px 0;
+     position: relative;
+     max-width: 1188px;
+     height: 565px;
+
+     img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit:cover;
+     }
+    }
+ 
+    .revitalize-border-block-left, 
+    .revitalize-border-block-right {
+      width: 624.28px;
+      height: 315.35px;
+      position: absolute;
+    }
+
+    .revitalize-border-block-left {
+      border-left: 1px solid $gradient-border; 
+      border-bottom: 1px solid $gradient-border;
+      bottom: 0;
+      left: 0;
+    }
+
+    .revitalize-border-block-right { 
+      border-right: 1px solid $gradient-border; 
+      border-top: 1px solid $gradient-border;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  &__bottom {
+    margin-top: 165px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+
+    &-heading {
+      max-width: 449px;
+      // @include second-heading;
+
+      h2 {
+        font-family: 'Anton';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+      }
+
+      span {
+        @include gradient-text;
+        font-family: 'Anton';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        letter-spacing: 0.06em;
+        color: #FFFFFF;
+      }
+    }
+
+    &-descr {
+
+      p {
+        max-width: 580px;
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 36px;
+      }
+
+      ul {
+        margin-top: 40px;
+        margin-bottom: 165px;
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 36px;
+        color: #FFFFFF;
+
+        li {
+          list-style: inside;
+        }
+      }
+    }
+  }
+}
+
+// --------------------------- adaptive ------------------------------------
+
+@media(max-width: 1200px) {
+  .proofs-block__heading {
+    margin-top: 150px;
+    padding: 0 160px;
+  }  
+}
+
+@media(max-width: 1130px) {
+
+  .proofs-block__explain {
+    margin-top: 30px;
+    margin-bottom: 100px;
+    flex-wrap: wrap;
+
+    &-item {
+      margin-top: 40px;
+    }
+  }
+
+  .revitalize-info__bottom {
+    margin-top: 105px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    &-heading {
+      margin-right: 25px;
+      width: 100%;
+      text-align: center;
+    }
+
+    &-descr {
+      margin-top: 32px;
+      width: 100%;
+      display: flex;
+      justify-content: space-around;
+
+      p {
+        margin-right: 25px;
+      }
+
+      ul {
+        margin-top: 0;
+        margin-bottom: 100px;
+      }
+    }
+  }
+}
+
+@media(max-width: 1000px) {
+  .proofs-block__heading {
+    padding: 0 100px;
+  }  
+}
+
+@media(max-width: 800px) { 
+
+  .proofs-block__heading {
+    margin-top: 100px;
+    padding: 0 50px;
+  }  
+
+  .proofs-block__explain {
+    margin-top: 10px;
+    margin-bottom: 48px;
+  }
+
+  .revitalize-info {
+    padding-top: 48px;
+  }
+
+  .revitalize-info__bottom {
+    margin-top: 48px;
+    align-items: center;
+    justify-content: flex-start;
+
+    &-heading {
+      text-align: start;
+    }
+
+    &-descr {
+      margin-top: 32px;
+      display: block;
+
+      p {
+        margin-right: 0px;
+      }
+
+      ul {
+        margin-bottom: 48px;
+      }
+    }
+  }
+  .revitalize-border-block-left, 
+  .revitalize-border-block-right {
+    width: 50% !important;
+    height: 50% !important;
+  }
+}
+
+@media(max-width: 750px) {
+
+  .about-block {
+    max-height: 450px;
+  }
+  .about-block__info {
+    max-height: 450px;
+  }
+}
+
+@media(max-width: 540px) { 
+
+  .about-block {
+    max-height: 309px;
+    margin-top: 69px;
+    background-image: url('../images/about-us-page-pics/about-us-bg-small.jpg');
+  }
+  .about-block__info {
+    max-height: 301px;
+  }
+
+  .revitalize-info__bottom {
+    &-heading {
+      font-size: 32px;
+    }
+
+    &-descr {
+      p {
+        font-size: 16px;
+        line-height: 24px;
+      }
+
+      ul {
+        margin-top: 32px;
+        font-size: 16px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  .proofs-block__heading {
+    margin-top: 70px;
+    padding: 0 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }  
+
+  .proofs-block__explain-item {
+    h2 {
+      font-size: 32px;
+      line-height: 48px;
+    }
+    h3 {
+      margin-top: 8px;
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  .revitalize-info__top {
+    height: 330px;
+    .revitalize-img {
+      margin: 16px !important;
+      max-width: 1188px;
+      height: 300px !important;
+    }
+  }
+}

@@ -1,0 +1,35 @@
+.terms-of-use-block {
+  height: 578px;
+  background-image: url('../images/terms-of-use-pics/terms-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__info {
+    height: 578px;
+  }
+}
+
+// --------------------------- adaptive ------------------------------------
+
+@media(max-width: 750px) {
+  .terms-of-use-block {
+    max-height: 450px;
+  }
+  .terms-of-use-block__info {
+    max-height: 450px;
+  } 
+}
+
+@media(max-width: 540px) { 
+
+  .terms-of-use-block {
+    background-image: url('../images/terms-of-use-pics/terms-bg-small.jpg');
+    max-height: 309px;
+    margin-top: 69px;
+  }
+  .terms-of-use-block__info {
+    max-height: 301px;
+  }
+}

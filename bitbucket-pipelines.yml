@@ -1,0 +1,31 @@
+image: node:12.18.3
+
+pipelines:
+  branches:
+    staging:
+      - step:
+          name: Installation & deploy
+          caches:
+            - node
+          script:
+            - pwd
+            - scp -r /opt/atlassian/pipelines/agent/build/ ubuntu@ec2-35-152-81-35.eu-south-1.compute.amazonaws.com:/var/tmp/topdoctor
+            - ssh ubuntu@ec2-35-152-81-35.eu-south-1.compute.amazonaws.com sudo rm -r /var/www/html/top-doc-clinic/
+            - ssh ubuntu@ec2-35-152-81-35.eu-south-1.compute.amazonaws.com sudo mv /var/tmp/topdoctor /var/www/html/top-doc-clinic
+#            - ssh ubuntu@ec2-35-152-81-35.eu-south-1.compute.amazonaws.com sudo rm -r /var/tmp/topdoctor/
+          size: 2x
+    master:
+      - step:
+          name: Installation & deploy
+          caches:
+            - node
+          script:
+            - pwd
+           # - scp -r /opt/atlassian/pipelines/agent/build/wp-content/themes/ ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com:/var/tmp/themes
+           # - ssh ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com sudo rm -r /var/www/html/wp-content/themes/JSP/
+           # - ssh ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com sudo mv /var/tmp/themes/JSP /var/www/html/wp-content/themes/
+           # - ssh ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com sudo rm -r /var/tmp/themes/
+           # - scp -r /opt/atlassian/pipelines/agent/build/wp-content/plugins/ ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com:/var/tmp/plugins
+           # - ssh ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com sudo rm -r /var/www/html/wp-content/plugins/
+           # - ssh ubuntu@ec2-18-193-201-117.eu-central-1.compute.amazonaws.com sudo mv /var/tmp/plugins /var/www/html/wp-content/plugins
+          size: 2x

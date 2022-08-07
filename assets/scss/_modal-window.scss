@@ -1,0 +1,246 @@
+
+$gradient-border: rgba(196, 140, 111, .7);
+$gradient-frame-parts: #9E5B39;
+$main-dark: #050712;
+
+.modal{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2500;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: rgba(0, 0, 0, .7);
+
+  &__dialog{
+    max-width: 620px;
+    min-height: 620px; 
+    margin: 0px auto;
+    margin-top: 85px;
+    opacity: 10;
+
+    &-content{
+      position: relative;
+      padding: 24px;
+      background: #fff;
+
+      .form-wrapper {
+        border: 1px solid $gradient-border; 
+        position: relative;
+        width: 100%;
+        //----------------------------------------------------------------
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;  
+
+          h2 {
+            margin-top: 48px;
+            margin-bottom: 24px;
+            @include third-heading;
+            text-align: center;
+            color: $main-dark;
+          } 
+
+          .modal-close-btn {
+            position: absolute;
+            top: 12px;
+            right: 22px;
+            font-size: 30px;
+            color: #000;
+            cursor: pointer;
+          }
+
+          .submit-btn {
+            margin-top: 32px;
+            margin-bottom: 48px;
+            background: transparent;
+            transition: all 1s ease;
+
+            .submit-btn-light {
+              display: inline;
+              transition: all 1s ease;
+            }
+       
+            .submit-btn-dark {
+              display: none;
+              transition: all 1s ease;
+            }
+       
+            &:hover {
+              transition: all 1s ease;
+      
+              .submit-btn-light {
+                display: none;
+                transition: all 1s ease;
+              }
+        
+              .submit-btn-dark {
+                display: inline;
+                transition: all 1s ease;
+              }
+            }
+          }
+
+          .form-items {
+            width: 80%;
+
+            .form-item {
+              width: 100%;
+
+              input, textarea, select {
+                margin-bottom: 10px;
+                width: 100%;
+                font-family: 'Avenir';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 22px;
+                color: #7B8794;
+                padding: 18px 0 8px 0px;
+                border-bottom: 1px solid #DEE2E6
+              }
+
+              textarea {
+                height: 88px;
+                margin-bottom: 0px;
+              }
+            }
+
+            .form-items-group {
+              display: flex;
+
+              .form-item {
+                input, select {
+                  width: 95%;
+                }
+              }
+
+              .form-item-email {
+                text-align: start;
+              }
+
+              .form-item-phone {
+                text-align: end;
+              }
+            }
+          }
+        }  
+        //----------------------------------------------------------------
+        .border-block-right, 
+        .border-block-left {
+          width: 50%;
+          height: 50%;
+          position: absolute;
+          pointer-events: none;
+        }
+    
+        .border-block-left { 
+          border-left: 1px solid $gradient-frame-parts;
+          border-bottom: 1px solid $gradient-frame-parts;
+          left: 0;
+          bottom: 0;
+        }  
+    
+        .border-block-right {
+          border-right: 1px solid $gradient-frame-parts;
+          border-top: 1px solid $gradient-frame-parts;
+          top: 0;
+          right: 0;
+        }
+      }
+    }
+  }
+}
+
+.my-form-status {
+  text-align: center;
+}
+
+.show{
+  display: block;
+}
+
+.hide{
+  display: none;
+}
+// --------------------------- adaptive ------------------------------------
+@media(max-width: 1000px) {
+
+  .modal__dialog {
+    margin-top: 20px;
+  }
+}
+@media(max-width: 668px) {
+
+  .modal__dialog {
+    margin-right: 20px;
+    margin-left: 20px;
+  }
+
+  .form-items {
+    .form-items-group {
+      display: flex;
+      flex-direction: column;
+      
+      .form-item {
+        input, select {
+          width: 100% !important;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 540px) {
+  .modal__dialog {
+  
+    .form-group {
+      .modal-close-btn {
+        top: 10px !important;
+        right: 15px !important;
+        font-size: 20px !important;
+      }
+
+      h2 {
+        margin-top: 24px !important;
+        margin-bottom: 0 !important;
+        font-size: 28px;
+        line-height: 46px;
+        text-align: center;
+      }
+
+      .submit-btn {
+        margin: 32px 0 32px !important;
+      }
+
+      .form-item {
+        textarea {
+          height: 30px !important;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+

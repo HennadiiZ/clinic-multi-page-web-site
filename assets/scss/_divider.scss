@@ -1,0 +1,137 @@
+.dividers-wrapper {
+  position: absolute;
+  top: 88%;
+  left: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .divider1 {
+    height: 70px;
+    width: 2px;
+    background: #fff !important;
+    margin: 0;
+  }
+  
+  .divider2 {
+    height: 70px;
+    width: 2px;
+    background: #000;
+    margin: 0;
+  }
+}
+
+//====== MAIN HEADING =================================
+.main-heading {
+  position: absolute;
+  bottom: 110px;
+  left: 0;
+  width: 100%;
+
+  &__subheader {
+    text-align: center;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    @include gradient-text;
+
+    span {
+      // display: inline-block;
+      max-width: 773px;
+    }
+  }
+
+  &__subheader-bg {
+    margin-bottom: 16px;
+    text-align: center;
+    font-family: 'Avenir';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    
+    span {
+      background: linear-gradient(90deg, #C0886C 0%, #9E5B39 100%);
+      padding: 0 11px;
+    }
+  }
+
+  &__header {
+    margin-top: 16px;
+    text-align: center;
+    // @include second-heading;
+    font-family: 'Anton';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 48px;
+    letter-spacing: 0.06em;
+    text-transform: capitalize;
+    color: #FFFFFF;
+
+    span {
+      // margin-top: 16px;
+      display: inline-block;
+      max-width: 773px;
+      margin: 0 20px;
+
+      font-family: 'Anton';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 40px;
+      line-height: 48px;
+      letter-spacing: 0.06em;
+      text-transform: capitalize;
+    }
+  }
+}
+//------------ adaptive -----
+
+@media(max-width: 750px) {
+  .dividers-wrapper {
+    top: 92.2%;
+
+    .divider1 {
+      height: 35px;
+    }
+
+    .divider2 {
+      height: 35px;
+    }
+  }
+}
+
+@media(max-width: 540px) {
+  .dividers-wrapper {
+    top: 88.8%;
+  }
+
+  .dividers-wrapper.taller-bg {
+    top: 93%;
+  }
+
+  .dividers-wrapper.specific-post-bg {
+    top: 90.5%;
+  }
+
+  .main-heading {
+    bottom: 52px;
+
+    &__header {
+      margin-top: 8px;
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 48px;
+      span {
+        max-width: 358px;
+      }
+    }
+  }
+}

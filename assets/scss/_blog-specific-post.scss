@@ -1,0 +1,346 @@
+$gradient-border: rgba(196, 140, 111, .7);
+$gradient-frame-parts: #9E5B39;
+$main-dark: #050712;
+
+.specific-post-block {
+  height: 578px;
+  // background-image: url('../assets/blog-page-pics/news1-bg.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  &__info {
+    height: 578px;
+    .specific-post-main-heading {
+      position: relative;
+    
+      &__text {
+        color: #fff;
+        margin-bottom: 40px;
+        @include second-heading;
+        position: absolute;
+        top: 310px;
+        right: 20%;
+        text-align: center;
+
+        p {
+          margin-bottom: 34px;        
+          font-family: 'Avenir';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 14px;
+          line-height: 22px;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+          background: linear-gradient(90deg, #C0886C 0%, #9E5B39 100%);
+        }
+      }
+    }
+  }
+}
+// share-block
+.share-block {
+  &__wrapper {
+    padding-bottom: 84px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .share-text {
+      margin-bottom: 20px;
+      font-family: 'Avenir';
+      font-style: normal;
+      font-weight: 800;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    .icons-block {
+      a {
+        margin-right: 12px;
+      }
+
+      .light {
+        display: inline-block;
+      }
+
+      .dark {
+        display: none;
+      }
+
+      a:hover {
+        .light {
+          display: none;
+        }
+
+        .dark {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+// posts-buttons
+.posts-buttons {
+  padding-bottom: 70px;   
+
+  &__wrapper {
+
+    display: flex;
+    justify-content: space-between;
+
+    .prev-button, .next-button {
+      width: 50%;
+      height: 111px;
+      border: 1px solid $gradient-border; 
+      position: relative;  
+      cursor: pointer;
+
+
+      .button-text {
+        height: 100%;  
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+
+        .arrow-left {
+          margin-right: 40px;
+          transform: rotate(180deg);
+        }
+
+        .arrow-right {
+          margin-left: 40px;
+        }
+      }
+
+      .frame-left, .frame-right {
+        width: 60px;
+        height: 57px; 
+        width: 10%;
+        height: 50%;
+        pointer-events: none;
+        position: absolute;
+      }
+
+      .frame-left { 
+        border-top: 1px solid $gradient-frame-parts;
+        border-left: 1px solid $gradient-frame-parts;
+        top: 0;
+        left: 0;
+      }
+      
+      .frame-right { 
+        border-bottom: 1px solid $gradient-frame-parts;
+        border-right: 1px solid $gradient-frame-parts;
+        bottom: 0;
+        right: 0;
+      }
+    }
+
+    .next-button {
+      margin-left: 20px;
+      .frame-right {
+        border: none;
+        border-top: 1px solid $gradient-frame-parts;
+        border-right: 1px solid $gradient-frame-parts;
+        top: 0;
+        right: 0;
+      }
+    }
+  }
+}
+
+// arrow buttons
+.header-and-btns-wrapper {
+  display: flex;
+  justify-content: space-between;
+
+  .slider-btns {
+    display: flex;
+    margin-top: 20px;
+
+    &__left { 
+      margin-right: 40px; 
+    }  
+
+    &__left, &__right { 
+      cursor: pointer; 
+      display: none;
+       
+      img {
+        width: 40px;
+        height: 40px;
+      } 
+    }
+  }
+}
+
+.bottom-btns-wrapper { 
+  display: none;
+}
+
+// --------------------------- adaptive ------------------------------------
+
+@media(max-width: 1220px) {
+  .header-and-btns-wrapper, .sub-header {
+    margin: 0 10px;
+  }
+}
+
+@media(max-width: 1110px) {
+
+  // for sliders --------------------
+.show {
+  display: block !important;
+}
+.hide {
+  display: none !important;
+}
+.fade {
+  animation-name: fade;
+  animation-duration: 1s;
+}
+@keyframes fade { 
+  from {
+    opacity: 0.1;
+  } to {
+    opacity: 1;
+  }
+}
+
+  .slider-btns {
+    &__left, &__right { 
+      display: block !important;
+    }
+  }
+
+  .header-and-btns-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .specific-news-item  {
+    width: 100% !important;
+
+    // &:not(:first-child) {
+    //   display:  none !important;
+    // }
+  }
+}
+
+@media(max-width: 750px) {
+  .specific-post-block {
+    max-height: 450px;
+  }
+  .specific-post-block__info {
+    max-height: 450px;
+  } 
+
+  .share-block {
+    &__wrapper {
+      padding-bottom: 52px;
+    }
+  }
+
+  .posts-buttons {
+    padding-bottom: 30px;
+  }
+}
+
+@media(max-width: 540px) { 
+  .specific-sub-header {
+    text-align: center !important;
+  }
+
+  .specific-post-block {
+    height: 374px;
+    margin-top: 69px;
+    background-image: url('../images/blog-page-pics/news1-bg-small.jpg');
+  }
+  .specific-post-block__info {
+    height: 366px;
+  }
+
+  .posts-buttons__wrapper { 
+    .prev-button, .next-button { 
+      height: 80px;
+
+      .button-text {
+        .arrow-left {
+          margin-right: 12px;
+          transform: rotate(180deg);
+        }
+
+        .arrow-right {
+          margin-left: 12px;
+        }
+      }
+    }
+  }
+
+  .specific-news-items {
+    margin-top: 0 !important;
+    padding-top: 8px !important;
+    padding-bottom: 32px !important;
+  }
+  
+  .bottom-btns-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+  
+    .slider-btns-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 80px;
+  
+      &__left { 
+        margin-right: 40px; 
+      }  
+  
+      &__left, &__right { 
+        cursor: pointer; 
+         
+        img {
+          width: 40px;
+          height: 40px;
+        } 
+      }
+    }
+  }
+
+  .header-and-btns-wrapper {
+    .slider-btns {
+      display: none;
+    }
+
+
+  }
+}
+
+@media(max-width: 350px) {
+  .posts-buttons {
+    padding-bottom: 0;
+  }
+  .posts-buttons__wrapper {
+    flex-direction: column;
+    align-items: center;
+
+    .prev-button, .next-button {
+      width: 100%;
+    }
+
+    .next-button {
+      margin-left: 0px;
+      margin-top: 10px;
+    }
+  }
+}

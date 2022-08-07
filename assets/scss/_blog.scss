@@ -1,0 +1,241 @@
+.blog-block {
+  height: 578px;
+  background-image: url('../images/blog-page-pics/blog-bg-img.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+  
+  &__info {
+    height: 578px;
+  }
+}
+
+.latest-news {
+  //background:  #D3D3D3;
+  background: #fff;
+
+  &__info {
+    padding-top: 97px;
+
+    .sub-header {
+      font-family: 'Avenir';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 22px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      @include gradient-text;
+    }
+
+    h2 {
+      margin-top: 8px;
+      @include second-heading;
+      color: $main-dark;
+    }
+
+    .text {
+      margin-top: 16px;    
+      font-family: 'Avenir';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 24px;
+      color: #000000;
+
+      a {
+        @include gradient-text;
+        cursor: pointer;
+        // text-decoration: underline !important;
+        &:hover {
+          text-decoration: underline !important;
+        }
+      }    
+    }
+
+    .news-items {
+      padding-top: 40px;
+      padding-bottom: 120px;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+
+      .news-item {
+        display: flex;
+        flex-direction: column;
+        width: 380px;
+
+        &__top {
+          .img-wrapper {
+            width: 380px;
+            height: 284px;
+            position: relative;
+  
+            img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              height: 100%;
+              object-fit:cover;
+              transition: all 0.3s ease;
+            }
+          }
+        }
+
+        &__bottom {
+          padding: 0 16px;
+
+          a {
+            .img-heading {        
+              margin-top: 16px;
+              font-family: 'Avenir';
+              font-style: normal;
+              font-weight: 800;
+              font-size: 16px;
+              line-height: 24px;
+              color: $main-dark;  
+            }
+
+            p:hover {
+              text-decoration: underline;
+            }
+          }
+
+          .img-text {
+            margin-top: 16px;
+            font-family: 'Avenir';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 22px;
+            color: #363A56;
+          }
+        }
+      }
+    }
+  }
+}
+
+// --------------------------- adaptive ------------------------------------
+
+@media(max-width: 1220px) {
+
+  .latest-news {
+    .news-items {
+      .news-item {
+        width: 30%;
+        
+        .img-wrapper {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 1110px) {
+
+  .latest-news {
+
+    &__info {
+
+      .sub-header, h2, .text {
+        text-align: center;
+      }
+  
+      .news-items {
+        justify-content: space-around;
+        padding-bottom: 60px;
+   
+        .news-item {
+          margin-top: 20px;
+          width: 45%;
+          
+          .img-wrapper {
+            width: 100%;
+          }
+  
+          a {
+            .img-heading {        
+              width: 100%; 
+            }
+          }
+  
+          .img-text {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 750px) {
+  .blog-block {
+    max-height: 450px;
+  }
+  .blog-block__info {
+    max-height: 450px;
+  } 
+
+  .latest-news {
+    &__info {
+      padding-top: 70px;
+
+      .news-items {
+        padding-top: 24px;
+        padding-bottom: 64px;
+   
+        .news-item {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 540px) { 
+
+  .blog-block {
+    max-height: 309px;
+    margin-top: 69px;
+    background-image: url('../images/blog-page-pics/blog-bg-img-small.jpg');
+  }
+  .blog-block__info {
+    max-height: 301px;
+  }
+
+  .latest-news {
+
+    &__info {
+      padding-top: 60px;
+
+      .sub-header, h2, .text {
+        text-align: start;
+        margin: 0;
+      }
+  
+      h2 {
+        margin-top: 8px;
+        margin-bottom: 16px;
+        font-size: 32px;
+        line-height: 48px;
+      }
+  
+      .news-items {
+        padding-top: 24px;
+        padding-bottom: 64px;
+   
+        .news-item {
+          width: 100%;
+          
+          .img-wrapper {
+            height: 184px;
+          }
+        }
+      }
+    }
+  }
+}

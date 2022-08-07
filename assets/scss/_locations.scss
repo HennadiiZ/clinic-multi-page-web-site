@@ -1,0 +1,462 @@
+$gradient-border: rgba(196, 140, 111, .7);
+$gradient-frame-parts: #9E5B39;
+$main-dark: #050712;
+//-------------------------LOCATIONS PAGE-------------------------
+//-------------------------LOCATION BLOCK-------------------------
+
+.location-block {
+  height: 578px;
+  // background-image: url('../images/locations-page-pics/locations-bg.jpg');
+  // background-image: url('../images/locations-page-pics/miami-bg.JPG');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(8, 7, 20, 0.7) 0%, rgba(21, 20, 29, 0.49) 100%);
+    z-index: 1;
+  }
+
+  .dividers-wrapper, .info-wrapper {
+    z-index: 3;
+  }
+  .bread-crumbs {
+    z-index: 100 !important;
+  }
+ 
+  &__info {
+    height: 578px;
+    width: 100%;
+    position: relative;
+ 
+    .info-wrapper {
+      position: absolute;
+      // top: 35%;
+      bottom: 110px;
+      left: 0;
+      width: 100%;
+
+      .coming-soon {
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 16px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #FFFFFF;
+
+        span {
+          background: linear-gradient(90deg, #C0886C 0%, #9E5B39 100%);
+          padding: 4px 4px 2px 4px;
+        }
+      }
+
+      h2 {
+        margin-top: 24px; 
+        margin-bottom: 32px;
+        @include second-heading;
+        text-align: center;
+        color: #fff;
+      }
+  
+      p {
+        margin-top: 16px; 
+        // padding: 0 20px; //
+        margin-left: 15px;//
+
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: #FFFFFF;
+        text-align: center;
+        position: relative;
+
+        a {
+          color: #FFFFFF;
+        }
+  
+        &.first-line {
+          text-decoration-line: underline;
+ 
+          span {
+            position: relative;
+
+            &::before {
+              content: url("../images/locations-page-pics/locations-icons/geo.svg");
+              position: absolute;
+              // bottom: -7px;
+              top: -2px;
+              left: -25px;
+            }
+          }
+        }
+  
+        &.second-line {
+          span {
+            position: relative;
+
+            &::before {
+              content: url("../images/locations-page-pics/locations-icons/calendar.svg");
+              position: absolute;
+              top: -2px;
+              left: -27px;
+            }
+          }
+        }
+  
+        &.third-line {
+          span {
+            position: relative;
+
+            &::before {
+              content: url("../images/locations-page-pics/locations-icons/phone.svg");
+              position: absolute;
+              top: -2px;
+              left: -27px;
+            }
+          }
+        }
+      }
+  
+      .location-btns {
+        margin-top: 40px;  
+        text-align: center; 
+
+        button {
+          background: transparent;
+          cursor: pointer;
+          &:not(:last-child) { margin-right: 25px; } 
+        }  
+
+        // -----------
+        .get-directions-btn {
+          transition: all 1s ease;
+
+          width: 172px;
+          height: 48px;
+          position: relative;
+          transition: all 1s ease;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+          }
+
+          .directions-light {
+            display: inline;
+            transition: all 1s ease;
+          }
+     
+          .directions-dark {
+            display: none;
+            transition: all 1s ease;
+          }
+     
+          &:hover {
+            transition: all 1s ease;
+     
+            .directions-light {
+              display: none;
+              transition: all 1s ease;
+            }
+      
+            .directions-dark {
+              display: inline;
+              transition: all 1s ease;
+            }
+          }
+        }
+        // -----------
+
+        .book-an-appointment-btn {
+          transition: all 1s ease;
+
+          width: 200px;
+          height: 48px;
+          position: relative;
+          transition: all 1s ease;
+
+          img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit:cover;
+          }
+
+          .appointment-btn-light {
+            display: inline;
+            transition: all 1s ease;
+          }
+     
+          .appointment-btn-dark {
+            display: none;
+            transition: all 1s ease;
+          }
+
+          &:hover {
+            transition: all 1s ease;
+    
+            .appointment-btn-light {
+              display: none;
+              transition: all 1s ease;
+            }
+       
+            .appointment-btn-dark {
+              display: inline;
+              transition: all 1s ease;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+//-------------------------LOCATION-SERVICES BLOCK-------------------------
+// .location-services-block         
+.serv-block-wrapper {
+  margin-bottom: 100px;
+
+  .content-block {
+    position: absolute;
+    bottom: 25%;
+    right: 35%;
+
+    &__heading {
+      display: flex;
+      align-items: center;
+
+      .number { 
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 32px;
+        @include gradient-text;
+        text-align: center;
+        margin-right: 24px;
+      }
+
+      .text {
+        @include second-heading;
+        color: #fff;
+        text-align: center;
+      }
+    }
+
+    &__list {
+      margin-top: 24px;
+      margin-left: 7px;
+
+      &-item {
+        list-style: inside;
+        font-family: 'Avenir';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 24px;
+        color: #FFF;
+      }
+    }
+
+    .read-more-btn {
+      background: transparent;
+      transition: all 1s ease;
+
+      .readmore-btn-light {
+        display: inline;
+        transition: all 1s ease;
+      }
+ 
+      .readmore-btn-dark {
+        display: none;
+        transition: all 1s ease;
+      }
+ 
+      &:hover {
+        transition: all 1s ease;
+
+        .readmore-btn-light {
+          display: none;
+          transition: all 1s ease;
+        }
+  
+        .readmore-btn-dark {
+          display: inline;
+          transition: all 1s ease;
+        }
+      }
+    }
+
+    .book-an-appointment-btn {
+      margin-top: 48px;
+      margin-left: 1px;
+      transition: all 1s ease;
+
+      .appointment-btn-light {
+        display: inline;
+        transition: all 1s ease;
+      }
+ 
+      .appointment-btn-dark {
+        display: none;
+        transition: all 1s ease;
+      }
+ 
+      &:hover {
+        transition: all 1s ease;
+
+        .appointment-btn-light {
+          display: none;
+          transition: all 1s ease;
+        }
+  
+        .appointment-btn-dark {
+          display: inline;
+          transition: all 1s ease;
+        }
+      }
+    }
+
+    &__img {
+      margin-top: -41px;
+    }
+  }
+}
+
+//-------------------------LOCATION-MAP BLOCK-------------------------
+.location-map-block {
+  height: 512px;
+  // background-image: url('../assets/map-img/Figmap-locations.jpg');
+}
+
+// --------------------------- adaptive ------------------------------------
+
+@media(max-width: 1100px) {
+
+  .location-info-services-list {
+    margin-bottom: 140px;
+    padding-left: 0px !important;
+  
+    .location-services-list {
+      border-bottom: none !important;
+      max-width: 100% !important;
+      height: 0px !important;
+      margin-left: 0px !important;
+      display: flex;
+      justify-content: space-between;
+      
+      .l-services-list__item {
+        display: block !important; 
+        margin: 0 !important;
+        padding: 0 !important;
+
+        &.active {
+          display: block;
+          padding-left: 0px !important;
+
+          &::before {
+            display: inline !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media(max-width: 596px) {
+
+  .content-block {
+    width: 100% !important;
+  }
+
+  .read-more-btn {
+    width: 138px !important;
+    height: 48px !important;
+  }
+}
+
+@media(max-width: 750px) {
+  .location-block {
+    max-height: 450px;
+    align-items: flex-start;
+
+    &__info {   
+      .info-wrapper {
+        top: 25%;
+      }
+    }
+  }
+  .location-block__info {
+    max-height: 450px;
+  } 
+}
+
+@media(max-width: 540px) { 
+
+  .location-block {
+    max-height: 406px;
+    margin-top: 69px;
+    // background-image: url('../images/locations-page-pics/locations-bg-small.jpg');
+  }
+  .location-block__info {
+    max-height: 398px;
+    
+    .info-wrapper {
+      top: 15% !important;
+
+      h2 {
+        margin: 0 0 8px;
+        font-size: 32px;
+        line-height: 48px;
+      }
+
+      p {
+        margin-top: 8px;
+      }
+
+      .location-btns {
+        margin-top: 32px;  
+        text-align: center; 
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0px !important;
+        
+        button {
+          margin-right: 0px !important;
+
+          &:first-child {
+            margin-bottom: 16px;
+          }
+        }   
+      }
+    }
+  } 
+}
+
+
+@media(max-width: 380px) { 
+  .location-services-list {
+    flex-wrap: wrap;
+
+    .l-services-list__item  {
+      width: 35%;
+      text-align: center;
+    }
+  }
+}

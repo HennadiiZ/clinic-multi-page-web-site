@@ -1,0 +1,77 @@
+// @font-face {  
+//   font-family: "Avenir";
+//   src: url("../assets/fonts/Avenir.ttc");
+//   src: url("../assets/fonts/Avenir.woff") format("woff"),
+//   url("../assets/fonts/Avenir.otf") format("opentype"),
+//   url("../assets/fonts/Avenir.svg#filename") format("svg");
+// }
+
+// @font-face {
+//   font-family: "Anton";
+//   src: url("../assets/fonts/Anton.ttf");
+//   src: url("../assets/fonts/Anton.ttf") format("truetype"),
+//   url("../assets/fonts/Anton.woff") format("woff"),
+//   url("../assets/fonts/Anton.otf") format("opentype"),
+//   url("../assets/fonts/Anton.svg#filename") format("svg");
+// }
+
+@font-face {
+  font-family: "Avenir";
+  src: url("../fonts/avenir/AvenirLTStd-Book.ttf");
+  src: url("../fonts/avenir/AvenirLTStd-Book.ttf") format("truetype"),
+       url("../fonts/avenir/AvenirLTStd-Book.otf") format("opentype"),
+       url("../fonts/avenir/AvenirLTStd-Book.woff") format("woff"),
+       url("../fonts/avenir/AvenirLTStd-Book.woff2") format("woff2"),
+       url("../fonts/avenir/AvenirLTStd-Book.svg#filename") format("svg"),
+       url('../fonts/avenir/AvenirLTStd-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("../fonts/anton/Anton.ttf");
+  src: url("../fonts/anton/Anton.ttf") format("truetype"),
+       url("../fonts/anton/Anton.otf") format("opentype"),
+       url("../fonts/anton/Anton.woff") format("woff"),
+       url("../fonts/anton/Anton.woff2") format("woff2"),
+       url('../fonts/anton/Anton.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url("../fonts/anton/Anton.svg#filename") format("svg");
+}
+    
+* {
+  font-family: "Avenir", "Anton", sans-serif;
+}
+
+@import "nullStyle";
+@import "fonts";
+@import "header";
+@import "footer";
+@import "home-page";
+@import "about-us-page";
+@import "contact-us";
+@import "divider";
+@import "modal-window";
+@import "blog-specific-post";
+@import "terms-of-use";
+@import "privacy-policy";
+@import "shared";
+@import "slider";
+
+@import "blog";
+@import "blog-post-one";
+@import "blog-post-two";
+@import "blog-post-three";
+
+@import "services";
+@import "prevent-service";
+@import "regenerate-service";
+@import "renew-service";
+@import "repair-service";
+
+@import "locations";
+@import "locations-brickellMiami_FL.scss";
+@import "locations-Atlanta_GA.scss";
+@import "locations-CoralGables_FL.scss";
+@import "locations-Hialeah_FL.scss";
+@import "locations-NorthMiami_FL.scss";
+@import "locations-RedondoBeach_CA.scss";
+@import "locations-Tucson_AZ.scss";

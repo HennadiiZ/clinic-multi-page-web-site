@@ -34,17 +34,20 @@
 
                 <div class="header__leftside">
                     <a href="../index.html" class="header__logo">
+                        <!-- <img src="../assets/images/logo/TopDocClinicsLogoSmall.svg" class="header-logo-white" alt="logo">
+                        <img src="../assets/images/logo/new-logo/TopDocClinics.Black.svg" class="header-logo-black" alt="logo"> -->
                         <img src="../assets/images/logo/TopDocClinicsLogoSmall.svg" class="header-logo-white" alt="logo">
                         <img src="../assets/images/logo/TopDocClinicsLogoSmallBlack.svg" class="header-logo-black" alt="logo">
+                        <img src="../assets/images/logo/new-logo/TopDocClinics.Black.svg" class="header-logo-black-mobile" alt="logo">
                     </a>
                 </div>
 
                 <div class="header__rightside">    
-                    <!--  -->
+                
                     <div class="header__burger">
                         <span></span>
                     </div>
-                    <!--  -->
+                
                     <nav class="header__menu menu">
                         <ul class="menu__list">
 
@@ -208,7 +211,7 @@
                     <div class="all-services-block__info slider-wrapper" id="slider-wrapper">
                         <div class="info-services-list location-info-services-list">
                             <h3>Services</h3>
-                            <ul class="services-list location-services-list">
+                            <ul class="location-services-list services-list-desktop">
                                 <li id="toggler-btn" class="services-list__item l-services-list__item toggler-btn active">Repair</li>
                                 <li id="toggler-btn" class="services-list__item l-services-list__item toggler-btn">Regenerate</li>
                                 <li id="toggler-btn" class="services-list__item l-services-list__item toggler-btn">Renew</li>
@@ -430,8 +433,10 @@
                             </span>
                             <ul class="links-item__list">
                                 <li class="links-item__list-item">
-                                    <!-- <a href="tel:(305) 990-1993">(305) 990-1993</a> -->
-                                    <a href="tel:305-486-7362">305-486-7362</a>
+                                    <a href="tel:+786-876-9515">3305-4TOPDOC</a>
+                                </li>
+                                <li class="links-item__list-item links-item-tel">
+                                    <a href="tel:+3054867362">305-486-7362</a>
                                 </li>
                                 <li class="links-item__list-item">
                                     <a href="mailto:info@topdocclinics.com">info@topdocclinics</a>
@@ -532,5 +537,29 @@
 <script defer src="../assets/js/sliders.js"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT8reFqnMxVCXOCZxKSkNJj7nUDvOSJxw&callback=initMap&v=weekly"
         defer></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script type="text/javascript">
+    (function() {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init('nKy2PC5dpCV2sCQNK');
+    })();
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        document.getElementById('my-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // generate a five digit number for the contact_number variable
+            // this.contact_number.value = Math.random() * 100000 | 0;
+
+            // these IDs from the previous steps
+            emailjs.sendForm('service_fg6pysr', 'template_v135l0d', this)
+                    .then(function() {
+                        console.log('SUCCESS!');
+                    }, function(error) {
+                        console.log('FAILED...', error);
+                    });
+        });
+    }
+</script>
 </body>
 </html>

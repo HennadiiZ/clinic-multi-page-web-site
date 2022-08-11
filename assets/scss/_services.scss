@@ -15,6 +15,17 @@ $gradient-frame-parts: #9E5B39;
   &__info {
     height: 578px;
   }
+
+  .dark-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(8, 7, 20, 0.7) 0%, rgba(21, 20, 29, 0.49) 100%);
+    z-index: 1;
+  }
+
 }
 
 //-------------------------services-block BLOCK-------------------------
@@ -48,12 +59,13 @@ $gradient-frame-parts: #9E5B39;
           @include third-heading;
         }
 
-        .services-list {
+        // .services-list {
+        .services-list-desktop {   
           margin-top: 40px;
           margin-left: 15px;
           max-width: 320px;
 
-          &__item {
+          li {
             margin-bottom: 24px;  
             font-family: 'Avenir';
             font-style: normal;
@@ -80,6 +92,10 @@ $gradient-frame-parts: #9E5B39;
               }
             }
           }  
+        }
+
+        .services-list {
+          display: none;
         }
       }
 
@@ -148,6 +164,10 @@ $gradient-frame-parts: #9E5B39;
           bottom: 37px;
           left: 91px;
   
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+
           &__heading {
             display: flex;
             align-items: center;
@@ -160,21 +180,20 @@ $gradient-frame-parts: #9E5B39;
           
           p {
             margin-top: 24px;
-            height:100px;
-
             font-family: 'Avenir';
             font-style: normal;
             font-weight: 400;
             font-size: 16px;
             line-height: 24px;
             color: #FFFFFF;
-            
-            overflow: auto;
-            // -------------------------
-            // text-overflow: ellipsis; 
-            // white-space: nowrap; 
-            // overflow: hidden; 
-            // width: 100%; 
+
+          // height:100px;
+          // overflow: auto;
+          // -------------------------
+          // text-overflow: ellipsis; 
+          // white-space: nowrap; 
+          // overflow: hidden; 
+          // width: 100%; 
           }
 
           .book-an-appointment-btn {
@@ -348,7 +367,13 @@ $gradient-frame-parts: #9E5B39;
       .services-list-wrapper {
         display: block;
 
+        .services-list-desktop {
+          display: none;
+        }
+
         .services-list {
+          display: block;
+
           position: relative;
           width: 100%;
           height: 50px;
@@ -365,6 +390,7 @@ $gradient-frame-parts: #9E5B39;
           cursor: pointer;
   
           &__item {
+            height: 20px;;
             margin: 0 !important;
             display: block;
             padding-left: 16px;
@@ -372,14 +398,14 @@ $gradient-frame-parts: #9E5B39;
             background: #fff !important;
             opacity: 1.0;
 
-            span {
+            // span {
             // -------------------------
             // display: inline-block;
             // text-overflow: ellipsis; 
             // white-space: nowrap; 
             // overflow: hidden; 
             // width: 92%; 
-            }
+            // }
 
             &.active {
               &::before {

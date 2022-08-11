@@ -8,7 +8,6 @@
   z-index: 200;
   transition: all 1s ease;
 
-
   &.header-on-scroll {
     //-------------------------------------------HEADER ON SCROLL
     background: #fff;
@@ -65,7 +64,7 @@
     }
   }
   
-  &::before{
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -107,6 +106,10 @@
     }
 
     img.header-logo-black {
+      display: none;
+    }
+
+    .header-logo-black-mobile {
       display: none;
     }
   }
@@ -301,7 +304,7 @@
 
 @media(max-width: 780px) {
 
-  .header-black-color  {
+  .header-black-color {
     .menu {
       &__link {
         color: #000;
@@ -348,6 +351,10 @@
   //   overflow: hidden;
   // }
 
+  .header::before {
+    background: #fff;
+  }
+
   .header__info {
     height: 68px;
   }
@@ -363,7 +370,14 @@
     }
 
     img.header-logo-black {
+      // display: block;
+      display: none !important;
+    }
+
+    img.header-logo-black-mobile {
+      // display: none;
       display: block;
+      margin-left: -30px !important;
     }
   }
 
@@ -433,8 +447,11 @@
       height: 100%;
       transition: all 0.3s ease 0s;
       background: #fff;
-      padding: 70px 0px 0px 0px;
+      // padding: 70px 0px 0px 0px;
+      padding: 40px 0px 0px 0px;
 
+      // overflow: auto;//=========================================================================
+      
       .menu__list {
         margin-top: 40px;
         display: block;
@@ -534,13 +551,13 @@
 }
 
 @media(max-width: 374px) {
-  .book-an-appointment {
-    display: none;
-  }
-  // .book-an-appointment-btn {
-  //   width: 80px !important;
-  //   height: 15px !important;
+  // .book-an-appointment {
+  //   display: none;
   // }
+  .book-an-appointment-btn {
+    width: 100px !important;
+    height: 15px !important;
+  }
 }
 
 

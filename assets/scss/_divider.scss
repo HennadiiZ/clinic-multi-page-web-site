@@ -5,6 +5,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  z-index: 2;
   
   .divider1 {
     height: 70px;
@@ -27,6 +28,7 @@
   bottom: 110px;
   left: 0;
   width: 100%;
+  z-index: 2;
 
   &__subheader {
     text-align: center;
@@ -59,7 +61,8 @@
     
     span {
       background: linear-gradient(90deg, #C0886C 0%, #9E5B39 100%);
-      padding: 0 11px;
+      // padding: 0 11px;
+      padding: 4px 11px 2px;
     }
   }
 

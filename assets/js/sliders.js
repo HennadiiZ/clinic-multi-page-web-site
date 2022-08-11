@@ -40,17 +40,17 @@ tabsParent.addEventListener('click', (e) => {
 });
 
 //-------------------------- timer for sliders
-function timer() {
-  let i = 0;
+// function timer() {
+//   let i = 0;
 
-  setInterval(() => {
+//   setInterval(() => {
 
-    hideTabContent();
-    showTabContent(i++);
+//     hideTabContent();
+//     showTabContent(i++);
 
-    if ( i > tabs.length - 1) {
-      i = 0;
-    }
-  }, 5000);
-}
-timer();
+//     if ( i > tabs.length - 1) {
+//       i = 0;
+//     }
+//   }, 5000);
+// }
+// timer();

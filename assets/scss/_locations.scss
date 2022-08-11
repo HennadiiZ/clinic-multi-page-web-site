@@ -416,7 +416,8 @@ $main-dark: #050712;
     max-height: 398px;
     
     .info-wrapper {
-      top: 15% !important;
+      // top: 15% !important;
+      top: 20% !important;
 
       h2 {
         margin: 0 0 8px;
@@ -452,6 +453,7 @@ $main-dark: #050712;
 
 @media(max-width: 380px) { 
   .location-services-list {
+    margin-bottom: 20px;
     flex-wrap: wrap;
 
     .l-services-list__item  {

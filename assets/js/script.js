@@ -1,3 +1,19 @@
+// ---------------- FORM --- input letters turn black -----
+const textareas = document.querySelectorAll('textarea');
+textareas.forEach((textarea) => {
+    textarea.addEventListener('input', (e) => {
+      e.target.classList.add('blackLetters');
+    });
+});
+
+const inputs = document.querySelectorAll('input');
+inputs.forEach((input) => {
+    input.addEventListener('input', (e) => {
+      e.target.classList.add('blackLetters');
+    });
+});
+//  ----------------
+
 // modal
 const appointmentBtns = document.querySelectorAll('.book-an-appointment-btn');
 const modal = document.querySelector('.modal');
@@ -269,26 +285,81 @@ function initMap() {
     const uluru2 = { lat: 33.825459, lng: -118.385277 };
     const uluru3 = { lat: 31.968599, lng: -99.901810 };
     // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("googleMap"), {
-        zoom: 5,
-        center: uluru3,
-        mapTypeControlOptions: {
-            mapTypeIds: ["roadmap", "satellite", "hybrid", "terrain", "styled_map"],
-        },
-    });
+    let map;
+
     const image =
         "https://topdocclinic.jetsoftpro.com/assets/icons/topDoctormarker.png";
+
+    const currentLocation = window.location.href.indexOf("/contact_us.html") !== -1;
+
+    if (currentLocation) {
+        map = new google.maps.Map(document.getElementById("googleMap"), {
+            zoom: 5,
+            center: uluru3,
+            mapTypeControlOptions: {
+                mapTypeIds: ["roadmap", "satellite", "hybrid", "terrain", "styled_map"],
+            },
+        });
+
+        const marker2 = new google.maps.Marker({
+            position: uluru2,
+            map: map,
+            icon: image,
+        });
+
+
+        const contentString2 =
+            '<div id="contentMarker">' +
+            "<div class='infoMarkerTitle'>Location</div>" +
+            "<div><b>Redondo Beach, CA</b></div>" +
+            "</div>";
+
+        const infowindow2 = new google.maps.InfoWindow({
+            content: contentString2,
+        });
+
+        marker2.addListener("click", () => {
+            infowindow2.open({
+                anchor: marker2,
+                map,
+                shouldFocus: false,
+            });
+        });
+
+    } else {
+        map = new google.maps.Map(document.getElementById("googleMap"), {
+            zoom: 5,
+            center: uluru,
+            mapTypeControlOptions: {
+                mapTypeIds: ["roadmap", "satellite", "hybrid", "terrain", "styled_map"],
+            },
+        });
+    }
+    const contentString =
+        '<div id="contentMarker">' +
+        "<div class='infoMarkerTitle'>Location</div>" +
+        "<div><b>1441 Brickell Ave, Suite 301, Miami, FL 33131</b></div>" +
+        "</div>";
+
     // The marker, positioned at Uluru
     const marker = new google.maps.Marker({
         position: uluru,
         map: map,
         icon: image,
+        title: "Uluru (Ayers Rock)",
     });
 
-    const marker2 = new google.maps.Marker({
-        position: uluru2,
-        map: map,
-        icon: image,
+
+    const infowindow = new google.maps.InfoWindow({
+        content: contentString,
+    });
+
+    marker.addListener("click", () => {
+        infowindow.open({
+            anchor: marker,
+            map,
+            shouldFocus: false,
+        });
     });
 
     map.mapTypes.set("styled_map", styledMapType);

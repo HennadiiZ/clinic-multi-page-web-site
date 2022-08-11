@@ -34,8 +34,11 @@
     
                     <div class="header__leftside">
                         <a href="../index.html" class="header__logo">
+                            <!-- <img src="../assets/images/logo/TopDocClinicsLogoSmallBlack.svg" class="header-logo-white" alt="logo">
+                            <img src="../assets/images/logo/new-logo/TopDocClinics.Black.svg" class="header-logo-black" alt="logo"> -->
                             <img src="../assets/images/logo/TopDocClinicsLogoSmallBlack.svg" class="header-logo-white" alt="logo">
                             <img src="../assets/images/logo/TopDocClinicsLogoSmallBlack.svg" class="header-logo-black" alt="logo">
+                            <img src="../assets/images/logo/new-logo/TopDocClinics.Black.svg" class="header-logo-black-mobile" alt="logo">
                         </a>
                     </div>
     
@@ -188,6 +191,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- <div class="dark-overlay"></div> -->
             </section>
             <section class="post-content">
                 <div class="container">
@@ -454,6 +458,7 @@
         </section>
         <!--  -->
         </main>
+
         <footer class="footer">
             <div class="container">
                 <div class="footer-info">
@@ -527,8 +532,10 @@
                                 </span>
                                 <ul class="links-item__list">
                                     <li class="links-item__list-item">
-                                        <!-- <a href="tel:(305) 990-1993">(305) 990-1993</a> -->
-                                        <a href="tel:305-486-7362">305-486-7362</a>
+                                        <a href="tel:+786-876-9515">3305-4TOPDOC</a>
+                                    </li>
+                                    <li class="links-item__list-item links-item-tel">
+                                        <a href="tel:+3054867362">305-486-7362</a>
                                     </li>
                                     <li class="links-item__list-item">
                                         <a href="mailto:info@topdocclinics.com">info@topdocclinics</a>
@@ -548,6 +555,7 @@
                 </div>
             </div>
         </footer>
+
     </div>
 <!-- modal -->
 <div class="modal">
@@ -627,5 +635,29 @@
     </script>
   <script src="../assets/js/script.js"></script>
   <script src="../assets/js/blog-slider.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // https://dashboard.emailjs.com/admin/account
+            emailjs.init('nKy2PC5dpCV2sCQNK');
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('my-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                // generate a five digit number for the contact_number variable
+                // this.contact_number.value = Math.random() * 100000 | 0;
+
+                // these IDs from the previous steps
+                emailjs.sendForm('service_fg6pysr', 'template_v135l0d', this)
+                        .then(function() {
+                            console.log('SUCCESS!');
+                        }, function(error) {
+                            console.log('FAILED...', error);
+                        });
+            });
+        }
+    </script>
 </body>
 </html>
